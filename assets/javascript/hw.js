@@ -2,7 +2,7 @@
 var topics = ["The Office", "Game of Thrones", "Stranger Things", "Curb Your Enthusiasm", "The Wire", "Breaking Bad", "Fargo", "Sherlock", "Parks and Recreation", "Seinfeld", "House of Cards", "Black Mirror", "Top Gear", "Peaky Blinders", "Better Call Saul", "Mr Robot", "Louie", "Silicon Valley", "Utopia", "Trailer Park Boys"];
 
 // Giphy API url
-var queryUrl = "http://api.giphy.com/v1/gifs/search";
+var queryUrl = "https://api.giphy.com/v1/gifs/search";
 // Giphy API public API Key
 var apiKey = "dc6zaTOxFJmzC";
 // Limit on number of gifs
