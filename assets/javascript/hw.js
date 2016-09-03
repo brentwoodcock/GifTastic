@@ -46,11 +46,10 @@ $(document).ready(function() {
                 rating: rating
             }
         }).done(function(response) {
-            console.log(response);
             $("#gifsContainer").empty();
             for (var i = 0; i < limit; i++) {
                 var box = $("<div style='display: inline-block;'><p class='rating'>Rating: " + response.data[i].rating + "</p></div>");
-                var gif = $("<img src=" + response.data[i].images.fixed_height_still.url + " class='gif' data-state='still' data-still=" + response.data[i].images.fixed_height_still.url + " data-animate=" + response.data[i].images.fixed_height.url + " alt='a'>");
+                var gif = $("<img src=" + response.data[i].images.fixed_height_still.url + " class='gif' data-state='still' data-still=" + response.data[i].images.fixed_height_still.url + " data-animate=" + response.data[i].images.fixed_height.url + " alt='" + topic + " gif " + (i + 1) + "''>");
                 box.append(gif);
                 $("#gifsContainer").append(box);
             }
@@ -79,13 +78,11 @@ $(document).ready(function() {
     // Listen to document clicks so user added buttons can be clicked
     $(document).on("click", ".topicBtn", function() {
         var topic = $(this).text();
-        console.log(topic);
         queryGiphy(topic);
     })
 
     // Play or pause a gif when clicked
     $(document).on("click", ".gif", function() {
-        console.log("clicked");
         if ($(this).data("state") == "still") {
             $(this).attr("src", $(this).data("animate"));
             $(this).data("state", "animate");
